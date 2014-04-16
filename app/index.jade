@@ -10,15 +10,42 @@ html(lang='en')
   body
     h1 Pure Template
 
-    .pure-g
-      .pure-u-1-2
-      .pure-u-1-2
-        a.pure-button(href='http://qrohlf.com/trianglify/') Background SVG Image
+    div#gameGrid
+      table
+        thead
+          tr
+            th(colspan=5) Memory Game
+        tbody
+          - for(var i = 0; i < 4; i++)
+            tr
+              - for(var j = 0; j < 5; j++)
+                td.panel(id='panel'+(5*i+j))
+                  .container
+                    .flipper
+                      img.back(src='../media/panels/nuclear.jpg')
+                      img.front(src='../media/panels/bb-1.png')
 
-    .pure-g
-      .pure-u-1-3: a.pure-button.button-success.button-xsmall(href='http://stage.purecss.io/') Documentation
-      .pure-u-1-3: a.pure-button.button-error.button-xlarge(href='http://stage.purecss.io/grids/') Grids
-      .pure-u-1-3: a.pure-button.button-secondary(href='http://stage.purecss.io/grids/#using-grids-with-custom-fonts') Changing Fonts
+    div#gameInfo
+      button#startButton START
+      div#clock
+
+      button#animate Animate
+    //-
+    //- .container
+    //-   .flipper
+    //-     .front A
+    //-     .back B
+
+
+    //- .pure-g
+    //-   .pure-u-1-2
+    //-   .pure-u-1-2
+    //-     a.pure-button(href='http://qrohlf.com/trianglify/') Background SVG Image
+    //-
+    //- .pure-g
+    //-   .pure-u-1-3: a.pure-button.button-success.button-xsmall(href='http://stage.purecss.io/') Documentation
+    //-   .pure-u-1-3: a.pure-button.button-error.button-xlarge(href='http://stage.purecss.io/grids/') Grids
+    //-   .pure-u-1-3: a.pure-button.button-secondary(href='http://stage.purecss.io/grids/#using-grids-with-custom-fonts') Changing Fonts
 
     script(src='./js/vendor/jquery-2.1.0.js')
     script(src='./js/source/main.js')

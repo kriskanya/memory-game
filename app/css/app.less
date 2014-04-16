@@ -52,3 +52,70 @@ html, button, input, select, textarea,
 .button-xlarge {
   font-size: 150%;
 }
+
+#gameGrid td{
+  border: 2px solid black;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+}
+
+#gameInfo, #gameGrid {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#clock {
+  width: 100px;
+  height: 50px;
+  background-color: #58b23f;
+  color: white;
+  font-style: bold;
+}
+
+
+
+
+
+
+//animation below
+
+.container {
+  width: 200px;
+  height: 250px;
+  -webkit-perspective: 500;  //the animation is stronger with a smaller number
+}
+
+.flipper, .front, .back {
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 50px
+}
+
+.flipper{
+  -webkit-transform-style: preserve-3d;    //makes all the children of the element move 3-dimensionally
+  -webkit-transition-duration: 2s;    //determines how long the animation takes
+  position: relative;  //changing the type of 'flipper' to relative
+}
+
+.front, .back{
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.back {
+  background-color: red;
+  z-index: 3;    //the higher the z-index, the closer to us this is
+}
+
+.front {
+  background-color: blue;
+  -webkit-transform: rotateY(180deg);
+}
+
+.faceUp {
+  -webkit-transform: rotateY(180deg);    //will rotate 180 degrees about the y-axis
+}
